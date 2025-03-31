@@ -1,8 +1,6 @@
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js").then(() => {
     console.log("Service Worker zarejestrowany!");
-  });
-}
 document.addEventListener("DOMContentLoaded", function () {
     const helpImg = document.querySelector(".help_img");
     const helpBox = document.getElementById("helpBox");
