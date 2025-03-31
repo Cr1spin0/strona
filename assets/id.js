@@ -5,22 +5,12 @@ if ("serviceWorker" in navigator) {
 document.addEventListener("DOMContentLoaded", function () {
     const helpImg = document.querySelector(".help_img");
     const helpBox = document.getElementById("helpBox");
-    let interval;
 
     helpImg.addEventListener("click", function () {
-        console.log("Kliknięto ikonę!"); // 🔹 Sprawdź, czy kliknięcie działa
-
-        helpBox.classList.toggle("visible");
-
-        if (helpBox.classList.contains("visible")) {
-            let dots = "";
-            interval = setInterval(() => {
-                dots = dots.length < 3 ? dots + "." : "";
-                helpBox.textContent = "Tutaj jest pomoc" + dots;
-            }, 500);
+        if (helpBox.style.display === "none" || helpBox.style.display === "") {
+            helpBox.style.display = "block";
         } else {
-            clearInterval(interval);
-            helpBox.textContent = "Tutaj jest pomoc...";
+            helpBox.style.display = "none";
         }
     });
 });
