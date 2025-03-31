@@ -372,3 +372,16 @@ p{
     margin-top: 5px;
     margin-bottom: 10px;
 }
+.help_box {
+    position: absolute;
+    top: 60px; /* Dostosuj według potrzeb */
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: none; /* Domyślnie ukryty */
+    transition: opacity 0.3s ease-in-out;
+}
+
