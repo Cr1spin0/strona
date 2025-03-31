@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let interval;
 
     helpImg.addEventListener("click", function () {
+        console.log("Kliknięto ikonę!"); // 🔹 Sprawdź, czy kliknięcie działa
+
         helpBox.classList.toggle("visible");
 
         if (helpBox.classList.contains("visible")) {
@@ -23,4 +25,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
