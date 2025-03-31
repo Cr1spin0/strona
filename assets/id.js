@@ -6,12 +6,21 @@ if ("serviceWorker" in navigator) {
 document.addEventListener("DOMContentLoaded", function () {
     const helpImg = document.querySelector(".help_img");
     const helpBox = document.getElementById("helpBox");
+    let interval;
 
     helpImg.addEventListener("click", function () {
-        if (helpBox.style.display === "none" || helpBox.style.display === "") {
-            helpBox.style.display = "block";
+        helpBox.classList.toggle("visible");
+
+        if (helpBox.classList.contains("visible")) {
+            let dots = "";
+            interval = setInterval(() => {
+                dots = dots.length < 3 ? dots + "." : "";
+                helpBox.textContent = "Tutaj jest pomoc" + dots;
+            }, 500);
         } else {
-            helpBox.style.display = "none";
+            clearInterval(interval);
+            helpBox.textContent = "Tutaj jest pomoc...";
         }
     });
 });
+
